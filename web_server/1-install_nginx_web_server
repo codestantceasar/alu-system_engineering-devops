@@ -1,11 +1,10 @@
 #!/usr/bin/env bash
-# Install and start Nginx, and serve "Holberton School"
+# Bash script that configures a new Ubuntu machine nginx
 
-apt-get update -y
-apt-get install nginx -y
+sudo apt-get update
+sudo apt-get install -y nginx
 
-# Ensure "Holberton School" is displayed
-echo "Holberton School" > /usr/share/nginx/html/index.html
+echo "Holberton School" | sudo tee /var/www/html/index.html
 
-# Start Nginx manually
-nginx
+sudo nginx -t
+sudo service nginx start
