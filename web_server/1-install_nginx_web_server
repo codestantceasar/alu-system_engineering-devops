@@ -1,9 +1,11 @@
 #!/usr/bin/env bash
-# This script installs Nginx and sets up a basic web page
+# Install and start Nginx, and serve "Holberton School"
 
 apt-get update -y
 apt-get install nginx -y
 
-echo "Holberton School" > /var/www/html/index.html
+# Ensure "Holberton School" is displayed
+echo "Holberton School" > /usr/share/nginx/html/index.html
 
-service nginx restart
+# Start Nginx manually
+nginx
