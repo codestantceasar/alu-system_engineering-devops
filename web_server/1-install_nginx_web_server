@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# This script installs Nginx and sets up a basic web page
+
+apt-get update -y
+apt-get install nginx -y
+
+echo "Holberton School" > /var/www/html/index.html
+
+service nginx restart
