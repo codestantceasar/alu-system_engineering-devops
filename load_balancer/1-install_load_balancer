@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+# This script installs and configures HAProxy for load balancing
+
+# Install HAProxy
+apt update -y
+apt install -y haproxy
+
+# Configure HAProxy
+echo "frontend http_front
+    bind *:80
+    default_backend http_back
+
+backend http_back
+    balance roundrobin
+    server web-01 [WEB_01_IP]:80 check
+    server web-02 [WEB_02_IP]:80 check" > /etc/haproxy/haproxy.cfg
+
+# Restart HAProxy to apply changes
+systemctl restart haproxy

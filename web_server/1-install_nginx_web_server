@@ -1,13 +1,16 @@
 #!/usr/bin/env bash
-# Update package list and install nginx
-apt-get update -y
-apt-get install nginx -y
+# Install Nginx and configure it to serve Holberton School
 
-# Ensure the web root directory exists
-mkdir -p /var/www/html
+sudo apt update -y
+sudo apt install nginx -y
 
-# Overwrite any existing index file with the correct content
-echo "Holberton School for the win!" > /var/www/html/index.html
+# Add Holberton School to the default index.html page
+echo '<html>
+<head><title>Holberton School</title></head>
+<body>
+    <h1>Holberton School for the win!</h1>
+</body>
+</html>' | sudo tee /var/www/html/index.html > /dev/null
 
-# Restart nginx using service command (do not use systemctl)
-service nginx restart
+# Restart Nginx using service (not systemctl)
+sudo service nginx restart
