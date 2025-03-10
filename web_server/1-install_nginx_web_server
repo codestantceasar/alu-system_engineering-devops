@@ -1,16 +1,8 @@
 #!/usr/bin/env bash
-# Install Nginx and configure it to serve Holberton School
+# installs nginx and configure it to listen on port 80
+# print "Hello World"
 
-sudo apt update -y
-sudo apt install nginx -y
-
-# Add Holberton School to the default index.html page
-echo '<html>
-<head><title>Holberton School</title></head>
-<body>
-    <h1>Holberton School for the win!</h1>
-</body>
-</html>' | sudo tee /var/www/html/index.html > /dev/null
-
-# Restart Nginx using service (not systemctl)
-sudo service nginx restart
+sudo apt-get update
+sudo apt-get -y install nginx
+echo 'Holberton School' | sudo tee /var/www/html/index.html
+sudo service nginx start
