@@ -1,3 +1,11 @@
-echo 'service apache2 start' > 0-give_me_a_page
-echo 'echo "Hello Holberton" > /var/www/html/index.html' >> 0-give_me_a_page
-echo 'service apache2 restart' >> 0-give_me_a_page
+#!/usr/bin/env bash
+#
+## Start Apache with sudo
+#sudo service apache2 start
+#
+## Allow write access to /var/www/html
+#sudo chmod 777 /var/www/html
+#
+## Ensure 'Hello Holberton' is returned
+#echo "Hello Holberton" | sudo tee /var/www/html/index.html
+#
