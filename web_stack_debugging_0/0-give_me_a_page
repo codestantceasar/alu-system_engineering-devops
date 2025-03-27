@@ -1,18 +1,5 @@
 #!/usr/bin/env bash
-#
-## Start Apache if it's not running
-#service apache2 status || service apache2 start
-#
-## Check if apache2 is running
-#if service apache2 status | grep -q "active (running)"; then
-#    echo "apache2 is running"
-#    else
-#        echo "apache2 failed to start"
-#            exit 1
-#            fi
-#
-#            # Create an index.html page with "Hello Holberton"
-#            echo "Hello Holberton" | sudo tee /var/www/html/index.html > /dev/null
-#
-#            # Restart Apache to apply changes
-#            service apache2 restart
+apt-get update
+apt-get install -y apache2
+echo "Hello Holberton" > /var/www/html/index.html
+service apache2 restart
