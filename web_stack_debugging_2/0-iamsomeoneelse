@@ -7,5 +7,5 @@
 #    exit 1
 #    fi
 #
-#    echo "Running whoami as user: $1"
+#    # Run the whoami command as the specified user
 #    sudo -u "$1" whoami
